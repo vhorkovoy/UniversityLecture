@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UniversityLecture.Web</name>
+    </assembly>
+    <members>
+        <member name="M:UniversityLecture.WEB.Controllers.AccountController.Post(UniversityLecture.WEB.Models.AuthenticationDto)">
+            <summary>Returns JWT.</summary>
+            <remarks>For testing please use login: 'demo', password: 'demo'.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.LectureHallsController.Get">
+            <summary>List all existing lecture halls.</summary>
+            <remarks>Returns all lecture halls.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.LecturersController.Get">
+            <summary>List all existing lectures.</summary>
+            <remarks>Returns all lecturer with subject.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.ReservationsController.Get">
+            <summary>List all existing reservations.</summary>
+            <remarks>Returns all reservations including lecture hall, lecurer and subject.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.ReservationsController.Get(System.Int32)">
+            <summary>Specific reservation.</summary>
+            <remarks>Returns specific reservation by reservation id.</remarks>
+            <param name = "id">Reservation id</param>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.ReservationsController.Post(UniversityLecture.WEB.Models.ReservationDto)">
+            <summary>Create new reservation.</summary>
+            <remarks>Create new reservation.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.ReservationsController.Delete(System.Int32)">
+            <summary>Delete reservation.</summary>
+            <remarks>Delete exsting reservation by id.</remarks>
+            <param name = "id">Reservation id</param>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.SubjectsController.Get">
+            <summary>List all existing subjects.</summary>
+            <remarks>Returns all subjects.</remarks>
+        </member>
+    </members>
+</doc>
