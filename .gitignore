@@ -6,4 +6,8 @@
 /UniversityLecture.Repo/obj
 /UniversityLecture.Web/bin
 /UniversityLecture.Web/obj
+/UniversityLecture.Bll/bin
+/UniversityLecture.Bll/obj
+/UniversityLecture.Bll.Test/bin
+/UniversityLecture.Bll.Test/obj
 /.vs

@@ -4,14 +4,7 @@ namespace UniversityLecture.Core
 {
     public class Reservation : BaseEntity<int>
     {
-        public const string MsgWrongDay = "'Reservation start and end dates should be on the same day.'";
-        public const string MSgStartBigerThenEnd = "'Reservation start time should be less then end time.'";
-        public const string MsgWrongWorkingHours = "'All reservations should be done inside working hours 8-18 (it can't start before 8 and must finish at 18 at the very latest).'";
-        public const string MsgWrongMinDuration = "'Reservation must last 3 hours at most.'";
-        public const string MsgWrongLecturer = "'Lecturer is not valid.'";
-        public const string MsgWrongHall = "'Lecture hall is not valid.'";
-        public const string MsgWrongPeriodHallClossed = "'Reservation period is not allowed. (Hall is closed)'";
-        public const string MsgWrongPeriodHallBusy = "'Reservation period is not allowed. (Hall is busy)'";
+      
         public int LectureHallId { get; set; }
         public int LecturerId { get; set; }
 

@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UniversityLecture.Bll\UniversityLecture.Bll.csproj" />
     <ProjectReference Include="..\UniversityLecture.Repo\UniversityLecture.Repo.csproj" />
   </ItemGroup>
 
@@ -38,5 +39,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="http://json.schemastore.org/avro-avsc" /></VisualStudio></ProjectExtensions>
 
 </Project>

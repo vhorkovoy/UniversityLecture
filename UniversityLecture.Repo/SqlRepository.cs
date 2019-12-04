@@ -22,11 +22,6 @@ namespace UniversityLecture.Repo
        
         public void Create<T>(T entity) where T : class
         {
-            //if (entity is IValidated)
-            //{
-            //    if(!((IValidated)entity).Validate(this, out List<string> errors))
-            //        throw new DbEntityValidationException($"[{string.Join(", ", errors)}]");
-            //}
             _Context.Set<T>().Add(entity);
         }
 

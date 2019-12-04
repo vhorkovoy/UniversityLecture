@@ -47,29 +47,23 @@ namespace UniversityLecture.Web
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
+            app.UseAuthorization();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
             {
-                // app.UseExceptionHandler("/error");
-            }
-            app.UseHttpsRedirection();
-            app.UseAuthentication();
-            app.UseAuthorization();
+                endpoints.MapControllers();
+            });
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "University Lecture API");
             });
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-            app.UseRouting();
-
             new ConfigurationBuilder().Build();
         }
         public void ConfigureContainer(ContainerBuilder builder)

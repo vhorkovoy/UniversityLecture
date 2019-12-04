@@ -12,6 +12,7 @@ namespace UniversityLecture.WEB.Models
 
         [Required]
         [DataMember(Order = 2)]
+        [DisplayFormat(DataFormatString = "dd.MM.yyyy")]
         public string Date { get; set; }
 
         [Required]
@@ -26,14 +27,14 @@ namespace UniversityLecture.WEB.Models
         [DataMember(Order = 4)]
         public int LectureHallId { get; set; }
 
-        [DataMember(Order = 5)]
-        public LectureHallDto LectureHall { get; set; }
+        //[DataMember(Order = 5)]
+        //public LectureHallDto LectureHall { get; set; }
 
         [Required]
         [DataMember(Order = 6)]
         public int LecturerId { get; set; }
 
-        [DataMember(Order = 7)]
-        public LecturerDto Lecturer { get; set; }
+        //[DataMember(Order = 7)]
+        //public LecturerDto Lecturer { get; set; }
     }
 }

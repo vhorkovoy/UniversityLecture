@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UniversityLecture.Web</name>
+    </assembly>
+    <members>
+        <member name="M:UniversityLecture.WEB.Controllers.AccountController.Post(UniversityLecture.WEB.Models.AuthenticationDto)">
+            <summary>Returns JWT.</summary>
+            <remarks>For testing please use login: 'demo', password: 'demo'.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.LectureHallsController.Get">
+            <summary>List all existing lecture halls.</summary>
+            <remarks>Return all lecture halls.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.LecturersController.Get">
+            <summary>List all existing lectures.</summary>
+            <remarks>Return all lecturer with subject.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.ReservationsController.Get">
+            <summary>List all existing reservations.</summary>
+            <remarks>Return all reservations.</remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.ReservationsController.Get(System.Int32)">
+            <summary>Specific reservation.</summary>
+            <remarks>Return specific reservation by reservation id.</remarks>
+            <param name = "id">Reservation id</param>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.ReservationsController.Post(UniversityLecture.WEB.Models.ReservationDto)">
+            <summary>Create new reservation.</summary>
+            <remarks>
+            <b>Reservation.Date</b> format <i>'dd.MM.yyyy'</i>. 
+             <br /> 
+             <br /> 
+            <b>Reservation.StartAt</b> format <i>'H:mm'</i> or <i>'hh:mm'</i>
+             <br /> 
+             <br /> 
+            <b>Reservation.EndAt</b> format <i>'H:mm'</i> or <i>'hh:mm'</i>
+            </remarks>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.ReservationsController.Delete(System.Int32)">
+            <summary>Delete reservation.</summary>
+            <remarks>Delete exsting reservation by id.</remarks>
+            <param name = "id">Reservation id</param>
+        </member>
+        <member name="M:UniversityLecture.WEB.Controllers.SubjectsController.Get">
+            <summary>List all existing subjects.</summary>
+            <remarks>Return all subjects.</remarks>
+        </member>
+    </members>
+</doc>
