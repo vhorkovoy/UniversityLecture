@@ -26,12 +26,12 @@ namespace UniversityLecture.WEB.Controllers
         ///<remarks>For testing please use login: 'demo', password: 'demo'.</remarks>
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult Post([FromBody]AuthenticationDto authenticatio)
+        public IActionResult Post([FromBody]AuthenticationDto authentication)
         {
-            var token = _authService.GetToken(authenticatio.Login, authenticatio.Password);
+            var token = _authService.GetToken(authentication.Login, authentication.Password);
             if (string.IsNullOrEmpty(token))
             {
-                _Logger.LogWarning($"Authentication filed for {authenticatio.Login}");
+                _Logger.LogWarning($"Authentication filed for {authentication.Login}");
                 return BadRequest();
             }
             return Ok(token);
