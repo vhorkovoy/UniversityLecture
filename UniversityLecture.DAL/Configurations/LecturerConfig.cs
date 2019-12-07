@@ -1,18 +1,18 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UniversityLecture.Core;
 
 namespace UniversityLecture.DAL.Configurations
 {
-    class LecturerConfig : EntityTypeConfiguration<Lecturer>
+    class LecturerConfig : IEntityTypeConfiguration<Lecturer>
     {
-        public LecturerConfig()
+        public void Configure(EntityTypeBuilder<Lecturer> builder)
         {
-            HasKey(p => p.ID);
-            Property(p => p.FirstName).IsRequired().HasMaxLength(50);
-            Property(p => p.LastName).IsRequired().HasMaxLength(50);
-            HasRequired(p => p.Subject).WithMany().
-                HasForeignKey(p => p.SubjectID).
-                WillCascadeOnDelete(false);
+            builder.HasKey(p => p.ID);
+            builder.Property(p => p.FirstName).IsRequired().HasMaxLength(50);
+            builder.Property(p => p.LastName).IsRequired().HasMaxLength(50);
+            builder.HasOne(p => p.Subject).WithMany().HasForeignKey(p => p.SubjectID).
+                OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

@@ -1,15 +1,16 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UniversityLecture.Core;
 
 namespace UniversityLecture.DAL.Configurations
 {
-    class SubjectConfig : EntityTypeConfiguration<Subject>
+    class SubjectConfig : IEntityTypeConfiguration<Subject>
     {
-        public SubjectConfig()
+        public void Configure(EntityTypeBuilder<Subject> builder)
         {
-            HasKey(p => p.ID);
-            Property(p => p.Title).IsRequired().HasMaxLength(255);
-            Property(p => p.Duration).IsRequired().HasColumnType("time");
+            builder.HasKey(p => p.ID);
+            builder.Property(p => p.Title).IsRequired().HasMaxLength(255);
+            builder.Property(p => p.Duration).IsRequired().HasColumnType("time");
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace UniversityLecture.DAL.Interfaces
 {
     public interface IDbContext : IDisposable
     {
-        IDbSet<T> Set<T>() where T : class;
+        DbSet<T> Set<T>() where T : class;
         int SaveChanges();
     }
 }

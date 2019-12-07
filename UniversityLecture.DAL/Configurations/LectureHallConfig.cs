@@ -1,16 +1,17 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UniversityLecture.Core;
 
 namespace UniversityLecture.DAL.Configurations
 {
-    class LectureHallConfig : EntityTypeConfiguration<LectureHall>
+    class LectureHallConfig : IEntityTypeConfiguration<LectureHall>
     {
-        public LectureHallConfig()
+        public void Configure(EntityTypeBuilder<LectureHall> builder)
         {
-            HasKey(p => p.ID);
-            Property(p => p.Number).IsRequired().HasMaxLength(10);
-            Property(p => p.OpenFrom).IsRequired();
-            Property(p => p.OpenTo).IsRequired();
+            builder.HasKey(p => p.ID);
+            builder.Property(p => p.Number).IsRequired().HasMaxLength(10);
+            builder.Property(p => p.OpenFrom).IsRequired();
+            builder.Property(p => p.OpenTo).IsRequired();
         }
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using UniversityLecture.Core;
 using UniversityLecture.WEB.Models;
 using UniversityLecture.Repo.Interfaces;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace UniversityLecture.WEB.Controllers
 {

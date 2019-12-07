@@ -1,17 +1,18 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UniversityLecture.Core;
 
 namespace UniversityLecture.DAL.Configurations
 {
-    class ReservationConfig : EntityTypeConfiguration<Reservation>
-    {
-        public ReservationConfig()
+    class ReservationConfig : IEntityTypeConfiguration<Reservation>
+    { 
+        public void Configure(EntityTypeBuilder<Reservation> builder)
         {
-            HasKey(p => p.ID);
-            Property(p => p.LectureHallId).IsRequired();
-            Property(p => p.LecturerId).IsRequired();
-            Property(p => p.StartDate).IsRequired().HasColumnType("datetime");
-            Property(p => p.EndDate).IsRequired().HasColumnType("datetime");
+            builder.HasKey(p => p.ID);
+            builder.Property(p => p.LectureHallId).IsRequired();
+            builder.Property(p => p.LecturerId).IsRequired();
+            builder.Property(p => p.StartDate).IsRequired().HasColumnType("datetime");
+            builder.Property(p => p.EndDate).IsRequired().HasColumnType("datetime");
         }
     }
 }
