@@ -2,7 +2,7 @@
 using UniversityLecture.DAL.Interfaces;
 using System.Linq;
 using UniversityLecture.Repo.Interfaces;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace UniversityLecture.Repo
 {
@@ -19,7 +19,16 @@ namespace UniversityLecture.Repo
         {
             return _Context.Set<T>().AsQueryable();
         }
-       
+        public IQueryable<T> GetAll<T>(ISpecification<T> spec) where T : class
+        {
+            var queryableResultWithIncludes = spec.Includes.
+                Aggregate(_Context.Set<T>().AsQueryable(),(current, include) => current.Include(include));
+
+            return spec.IncludeStrings
+                .Aggregate(queryableResultWithIncludes, (current, include) => current.Include(include)).
+                    Where(spec.Criteria);
+        }
+
         public void Create<T>(T entity) where T : class
         {
             _Context.Set<T>().Add(entity);
