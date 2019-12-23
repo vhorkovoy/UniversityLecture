@@ -11,7 +11,6 @@ namespace UniversityLecture.Bll.Specifications
         {
             AddInclude(r => r.Lecturer);
             AddInclude(r => r.LectureHall);
-            AddInclude("Reservation.Lecturer.Subject");
         }
     }
 }
