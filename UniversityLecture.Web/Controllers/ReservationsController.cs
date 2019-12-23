@@ -9,6 +9,7 @@ using UniversityLecture.Repo.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using UniversityLecture.Bll.Validators;
+using UniversityLecture.Bll.Specifications;
 
 namespace UniversityLecture.WEB.Controllers
 {
@@ -38,7 +39,7 @@ namespace UniversityLecture.WEB.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get(int id)
         {
-            var reservation = _Repo.GetAll<Reservation>().SingleOrDefault(r => r.ID == id);
+            var reservation = _Repo.GetAll(new ReservationWithLectureAndHallSpec()).SingleOrDefault(r => r.ID == id);
             if(reservation == null)
                 return NotFound();
             return Ok(_Mapper.Map<Reservation, ReservationDto>(reservation));
