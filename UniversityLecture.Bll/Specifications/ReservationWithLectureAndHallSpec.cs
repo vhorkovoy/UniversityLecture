@@ -5,12 +5,12 @@ using UniversityLecture.Core;
 
 namespace UniversityLecture.Bll.Specifications
 {
-    public class ReservationWithLectureSpec : BaseSpec<Reservation>
+    public class ReservationWithLectureAndHallSpec : BaseSpec<Reservation>
     {
-        public ReservationWithLectureSpec(int lecturerId):
-            base(r => r.LecturerId == lecturerId)
+        public ReservationWithLectureAndHallSpec()
         {
             AddInclude(r => r.Lecturer);
+            AddInclude(r => r.LectureHall);
         }
     }
 }
