@@ -8,16 +8,17 @@ namespace UniversityLecture.Bll.Specifications
 {
     public abstract class BaseSpec<T> : ISpecification<T>
     {
-        public BaseSpec(Expression<Func<T, bool>> criteria) : this()
-        {
-            Criteria = criteria;
-           
-        }
         public BaseSpec()
         {
             Includes = new List<Expression<Func<T, object>>>();
             IncludeStrings = new List<string>();
         }
+        public BaseSpec(Expression<Func<T, bool>> criteria) : this()
+        {
+            Criteria = criteria;
+           
+        }
+        
         public Expression<Func<T, bool>> Criteria { get; }
         public List<Expression<Func<T, object>>> Includes { get; }
         public List<string> IncludeStrings { get; }
