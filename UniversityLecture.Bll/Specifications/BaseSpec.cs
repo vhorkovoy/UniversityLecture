@@ -10,6 +10,7 @@ namespace UniversityLecture.Bll.Specifications
     {
         public BaseSpec()
         {
+
             Includes = new List<Expression<Func<T, object>>>();
             IncludeStrings = new List<string>();
         }
